@@ -16,6 +16,9 @@
 %if "%{scl}" == "rh-php70"
 %global sub_prefix sclo-php70-
 %endif
+%if "%{scl}" == "rh-php71"
+%global sub_prefix sclo-php71-
+%endif
 %scl_package       php-smbclient
 %else
 %global pkg_name   %{name}
@@ -26,7 +29,7 @@
 
 Name:           %{?sub_prefix}php-smbclient
 Version:        0.9.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 Summary:        PHP wrapper for libsmbclient
 
@@ -148,6 +151,9 @@ fi
 
 
 %changelog
+* Thu Aug 10 2017 Remi Collet <remi@remirepo.net> - 0.9.0-2
+- change for sclo-php71
+
 * Tue Mar  7 2017 Remi Collet <remi@fedoraproject.org> - 0.9.0-1
 - cleanup for SCLo build
 
