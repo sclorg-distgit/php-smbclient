@@ -2,7 +2,7 @@
 #
 # remirepo spec file for php-smbclient
 #
-# Copyright (c) 2015-2017 Remi Collet
+# Copyright (c) 2015-2018 Remi Collet
 # License: CC-BY-SA
 # http://creativecommons.org/licenses/by-sa/4.0/
 #
@@ -10,14 +10,14 @@
 #
 %if 0%{?scl:1}
 %global sub_prefix %{scl_prefix}
-%if "%{scl}" == "rh-php56"
-%global sub_prefix sclo-php56-
-%endif
 %if "%{scl}" == "rh-php70"
 %global sub_prefix sclo-php70-
 %endif
 %if "%{scl}" == "rh-php71"
 %global sub_prefix sclo-php71-
+%endif
+%if "%{scl}" == "rh-php72"
+%global sub_prefix sclo-php72-
 %endif
 %scl_package       php-smbclient
 %else
@@ -29,7 +29,7 @@
 
 Name:           %{?sub_prefix}php-smbclient
 Version:        0.9.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 
 Summary:        PHP wrapper for libsmbclient
 
@@ -151,6 +151,9 @@ fi
 
 
 %changelog
+* Thu Nov 15 2018 Remi Collet <remi@remirepo.net> - 0.9.0-3
+- build for sclo-php72
+
 * Thu Aug 10 2017 Remi Collet <remi@remirepo.net> - 0.9.0-2
 - change for sclo-php71
 
