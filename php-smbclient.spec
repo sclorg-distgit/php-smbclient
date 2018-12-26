@@ -28,8 +28,8 @@
 %global ini_name   40-%{pecl_name}.ini
 
 Name:           %{?sub_prefix}php-smbclient
-Version:        0.9.0
-Release:        3%{?dist}
+Version:        1.0.0
+Release:        1%{?dist}
 
 Summary:        PHP wrapper for libsmbclient
 
@@ -66,8 +66,6 @@ Provides:       %{?scl_prefix}php-pecl(%{pecl_name})%{?_isa} = %{version}
 %{pecl_name} is a PHP extension that uses Samba's libsmbclient
 library to provide Samba related functions and 'smb' streams
 to PHP programs.
-
-Package built for PHP %(%{__php} -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')%{?scl: as Software Collection (%{scl} by %{?scl_vendor}%{!?scl_vendor:rh})}.
 
 
 %prep
@@ -151,6 +149,9 @@ fi
 
 
 %changelog
+* Wed Dec 26 2018 Remi Collet <remi@remirepo.net> - 1.0.0-1
+- update to 1.0.0
+
 * Thu Nov 15 2018 Remi Collet <remi@remirepo.net> - 0.9.0-3
 - build for sclo-php72
 
